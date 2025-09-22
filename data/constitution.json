@@ -1,0 +1,115 @@
+{
+  "preamble": "We the People of the United States, in Order to form a more perfect Union, establish Justice, insure domestic Tranquility, provide for the common defence, promote the general Welfare, and secure the Blessings of Liberty to ourselves and our Posterity, do ordain and establish this Constitution for the United States of America.",
+  "articles": [
+    {
+      "number": 1,
+      "title": "Article I - Legislative Branch",
+      "sections": [
+        {
+          "number": 1,
+          "title": "Legislative Powers",
+          "content": "All legislative Powers herein granted shall be vested in a Congress of the United States, which shall consist of a Senate and House of Representatives."
+        },
+        {
+          "number": 2,
+          "title": "House of Representatives",
+          "content": "The House of Representatives shall be composed of Members chosen every second Year by the People of the several States, and the Electors in each State shall have the Qualifications requisite for Electors of the most numerous Branch of the State Legislature."
+        },
+        {
+          "number": 3,
+          "title": "Senate",
+          "content": "The Senate of the United States shall be composed of two Senators from each State, chosen by the Legislature thereof, for six Years; and each Senator shall have one Vote."
+        }
+      ]
+    },
+    {
+      "number": 2,
+      "title": "Article II - Executive Branch",
+      "sections": [
+        {
+          "number": 1,
+          "title": "Executive Power",
+          "content": "The executive Power shall be vested in a President of the United States of America. He shall hold his Office during the Term of four Years, and, together with the Vice President, chosen for the same Term, be elected, as follows:"
+        },
+        {
+          "number": 2,
+          "title": "Presidential Powers",
+          "content": "The President shall be Commander in Chief of the Army and Navy of the United States, and of the Militia of the several States, when called into the actual Service of the United States; he may require the Opinion, in writing, of the principal Officer in each of the executive Departments, upon any Subject relating to the Duties of their respective Offices, and he shall have Power to grant Reprieves and Pardons for Offences against the United States, except in Cases of Impeachment."
+        }
+      ]
+    },
+    {
+      "number": 3,
+      "title": "Article III - Judicial Branch",
+      "sections": [
+        {
+          "number": 1,
+          "title": "Judicial Power",
+          "content": "The judicial Power of the United States, shall be vested in one supreme Court, and in such inferior Courts as the Congress may from time to time ordain and establish. The Judges, both of the supreme and inferior Courts, shall hold their Offices during good Behaviour, and shall, at stated Times, receive for their Services, a Compensation, which shall not be diminished during their Continuance in Office."
+        }
+      ]
+    }
+  ],
+  "amendments": [
+    {
+      "number": 1,
+      "title": "Freedom of Religion, Speech, Press, Assembly, Petition",
+      "content": "Congress shall make no law respecting an establishment of religion, or prohibiting the free exercise thereof; or abridging the freedom of speech, or of the press; or the right of the people peaceably to assemble, and to petition the Government for a redress of grievances.",
+      "ratified": "December 15, 1791"
+    },
+    {
+      "number": 2,
+      "title": "Right to Bear Arms",
+      "content": "A well regulated Militia, being necessary to the security of a free State, the right of the people to keep and bear Arms, shall not be infringed.",
+      "ratified": "December 15, 1791"
+    },
+    {
+      "number": 3,
+      "title": "Quartering of Soldiers",
+      "content": "No Soldier shall, in time of peace be quartered in any house, without the consent of the Owner, nor in time of war, but in a manner to be prescribed by law.",
+      "ratified": "December 15, 1791"
+    },
+    {
+      "number": 4,
+      "title": "Search and Seizure",
+      "content": "The right of the people to be secure in their persons, houses, papers, and effects, against unreasonable searches and seizures, shall not be violated, and no Warrants shall issue, but upon probable cause, supported by Oath or affirmation, and particularly describing the place to be searched, and the persons or things to be seized.",
+      "ratified": "December 15, 1791"
+    },
+    {
+      "number": 5,
+      "title": "Due Process, Double Jeopardy, Self-Incrimination, Eminent Domain",
+      "content": "No person shall be held to answer for a capital, or otherwise infamous crime, unless on a presentment or indictment of a Grand Jury, except in cases arising in the land or naval forces, or in the Militia, when in actual service in time of War or public danger; nor shall any person be subject for the same offence to be twice put in jeopardy of life or limb; nor shall be compelled in any criminal case to be a witness against himself, nor be deprived of life, liberty, or property, without due process of law; nor shall private property be taken for public use, without just compensation.",
+      "ratified": "December 15, 1791"
+    },
+    {
+      "number": 6,
+      "title": "Right to a Fair Trial",
+      "content": "In all criminal prosecutions, the accused shall enjoy the right to a speedy and public trial, by an impartial jury of the State and district wherein the crime shall have been committed, which district shall have been previously ascertained by law, and to be informed of the nature and cause of the accusation; to be confronted with the witnesses against him; to have compulsory process for obtaining witnesses in his favor, and to have the Assistance of Counsel for his defence.",
+      "ratified": "December 15, 1791"
+    },
+    {
+      "number": 7,
+      "title": "Right to Trial by Jury in Civil Cases",
+      "content": "In Suits at common law, where the value in controversy shall exceed twenty dollars, the right of trial by jury shall be preserved, and no fact tried by a jury, shall be otherwise re-examined in any Court of the United States, than according to the rules of the common law.",
+      "ratified": "December 15, 1791"
+    },
+    {
+      "number": 8,
+      "title": "Excessive Bail, Fines, and Punishment Forbidden",
+      "content": "Excessive bail shall not be required, nor excessive fines imposed, nor cruel and unusual punishments inflicted.",
+      "ratified": "December 15, 1791"
+    },
+    {
+      "number": 9,
+      "title": "Rights Retained by the People",
+      "content": "The enumeration in the Constitution, of certain rights, shall not be construed to deny or disparage others retained by the people.",
+      "ratified": "December 15, 1791"
+    },
+    {
+      "number": 10,
+      "title": "Reserved Powers of States",
+      "content": "The powers not delegated to the United States by the Constitution, nor prohibited by it to the States, are reserved to the States respectively, or to the people.",
+      "ratified": "December 15, 1791"
+    }
+  ]
+}
