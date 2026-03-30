@@ -148,20 +148,22 @@ class ConstitutionApp {
         articleDiv.className = 'content-card';
         articleDiv.id = `article-${article.number}`;
 
-        let sectionsHtml = '';
+        let bodyHtml = '';
         if (article.sections && article.sections.length > 0) {
-            sectionsHtml = article.sections.map(section => `
+            bodyHtml = article.sections.map(section => `
                 <div class="section">
                     <h4 class="section-title">Section ${section.number}: ${section.title}</h4>
-                    <p class="section-content">${section.content}</p>
+                    <p class="section-content">${section.content.replace(/\n\n/g, '</p><p class="section-content">')}</p>
                 </div>
             `).join('');
+        } else if (article.content) {
+            bodyHtml = `<p>${article.content.replace(/\n\n/g, '</p><p>')}</p>`;
         }
 
         articleDiv.innerHTML = `
             <h3 class="article-title">${article.title}</h3>
             <div class="article-content">
-                ${sectionsHtml || `<p>${article.content || 'Content loading...'}</p>`}
+                ${bodyHtml || '<p>Content loading...</p>'}
             </div>
         `;
 
@@ -173,11 +175,16 @@ class ConstitutionApp {
         amendmentDiv.className = 'content-card';
         amendmentDiv.id = `amendment-${amendment.number}`;
 
+        const ratifiedHtml = amendment.ratified
+            ? `<p class="amendment-ratified">Ratified: ${amendment.ratified}</p>`
+            : '';
+
         amendmentDiv.innerHTML = `
             <h3 class="amendment-title">Amendment ${amendment.number}</h3>
             <h4 class="amendment-subtitle">${amendment.title}</h4>
+            ${ratifiedHtml}
             <div class="amendment-content">
-                <p>${amendment.content}</p>
+                <p>${amendment.content.replace(/\n\n/g, '</p><p>')}</p>
             </div>
         `;
 

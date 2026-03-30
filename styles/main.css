@@ -322,6 +322,20 @@ body {
     color: var(--secondary-color);
 }
 
+.amendment-ratified {
+    font-size: 0.9rem;
+    color: var(--text-light);
+    font-style: italic;
+    margin-bottom: var(--spacing-md);
+}
+
+.amendment-subtitle {
+    font-size: 1rem;
+    font-weight: 500;
+    margin-bottom: var(--spacing-sm);
+    color: var(--text-color);
+}
+
 /* Loading state */
 .loading {
     text-align: center;
