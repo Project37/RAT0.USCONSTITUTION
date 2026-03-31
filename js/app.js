@@ -117,6 +117,7 @@ class ConstitutionApp {
     renderContent() {
         this.renderArticles();
         this.renderAmendments();
+        this.buildTOC();
     }
 
     renderArticles() {
@@ -145,8 +146,11 @@ class ConstitutionApp {
 
     createArticleElement(article) {
         const articleDiv = document.createElement('div');
-        articleDiv.className = 'content-card';
+        articleDiv.className = 'content-card animate-in';
         articleDiv.id = `article-${article.number}`;
+
+        const romanNumerals = ['I','II','III','IV','V','VI','VII','VIII','IX','X'];
+        const ghostLabel = romanNumerals[article.number - 1] || article.number;
 
         let bodyHtml = '';
         if (article.sections && article.sections.length > 0) {
@@ -161,6 +165,7 @@ class ConstitutionApp {
         }
 
         articleDiv.innerHTML = `
+            <span class="card-ghost-number" aria-hidden="true">${ghostLabel}</span>
             <h3 class="article-title">${article.title}</h3>
             <div class="article-content">
                 ${bodyHtml || '<p>Content loading...</p>'}
@@ -172,7 +177,7 @@ class ConstitutionApp {
 
     createAmendmentElement(amendment) {
         const amendmentDiv = document.createElement('div');
-        amendmentDiv.className = 'content-card';
+        amendmentDiv.className = 'content-card animate-in';
         amendmentDiv.id = `amendment-${amendment.number}`;
 
         const ratifiedHtml = amendment.ratified
@@ -180,6 +185,7 @@ class ConstitutionApp {
             : '';
 
         amendmentDiv.innerHTML = `
+            <span class="card-ghost-number" aria-hidden="true">${amendment.number}</span>
             <h3 class="amendment-title">Amendment ${amendment.number}</h3>
             <h4 class="amendment-subtitle">${amendment.title}</h4>
             ${ratifiedHtml}
@@ -191,17 +197,61 @@ class ConstitutionApp {
         return amendmentDiv;
     }
 
+    buildTOC() {
+        const tocList = document.getElementById('tocList');
+        if (!tocList || !this.constitutionData) return;
+
+        // Clear placeholder content (keep initial preamble item + group labels)
+        tocList.innerHTML = '<li><a href="#preamble">Preamble</a></li>';
+
+        // Articles group
+        if (this.constitutionData.articles && this.constitutionData.articles.length) {
+            const articleLabel = document.createElement('span');
+            articleLabel.className = 'toc-group-label';
+            articleLabel.textContent = 'Articles';
+            tocList.appendChild(articleLabel);
+
+            const romanNumerals = ['I','II','III','IV','V','VI','VII','VIII','IX','X'];
+            this.constitutionData.articles.forEach(article => {
+                const li = document.createElement('li');
+                const a = document.createElement('a');
+                a.href = `#article-${article.number}`;
+                const roman = romanNumerals[article.number - 1] || article.number;
+                a.textContent = `Article ${roman}`;
+                li.appendChild(a);
+                tocList.appendChild(li);
+            });
+        }
+
+        // Amendments group
+        if (this.constitutionData.amendments && this.constitutionData.amendments.length) {
+            const amendLabel = document.createElement('span');
+            amendLabel.className = 'toc-group-label';
+            amendLabel.textContent = 'Amendments';
+            tocList.appendChild(amendLabel);
+
+            this.constitutionData.amendments.forEach(amendment => {
+                const li = document.createElement('li');
+                const a = document.createElement('a');
+                a.href = `#amendment-${amendment.number}`;
+                a.textContent = `Amendment ${amendment.number}`;
+                li.appendChild(a);
+                tocList.appendChild(li);
+            });
+        }
+    }
+
     showError(message) {
         const errorDiv = document.createElement('div');
         errorDiv.className = 'error-message';
         errorDiv.style.cssText = `
-            background-color: #fee2e2;
-            color: #dc2626;
+            background-color: #1a0a0a;
+            color: #f87171;
             padding: 1rem;
             border-radius: 0.5rem;
             margin: 1rem;
             text-align: center;
-            border: 1px solid #fca5a5;
+            border: 1px solid #7f1d1d;
         `;
         errorDiv.textContent = message;
 
