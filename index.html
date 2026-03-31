@@ -17,9 +17,14 @@
     <link rel="manifest" href="manifest.json">
     
     <!-- Theme colors -->
-    <meta name="theme-color" content="#1f2937">
-    <meta name="msapplication-TileColor" content="#1f2937">
+    <meta name="theme-color" content="#080810">
+    <meta name="msapplication-TileColor" content="#080810">
     
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=Lora:ital,wght@0,400;1,400&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+
     <!-- Stylesheets -->
     <link rel="stylesheet" href="styles/main.css">
     
@@ -54,9 +59,29 @@
 
     <!-- Main Content -->
     <main class="main">
+
+        <!-- Hero Section -->
+        <section class="hero" aria-label="Introduction">
+            <div class="hero-year" aria-hidden="true">1787</div>
+            <div class="hero-content">
+                <p class="hero-eyebrow">Established September 17, 1787</p>
+                <h2 class="hero-title">The <span>Constitution</span><br>of the United States</h2>
+                <p class="hero-tagline">The supreme law of the land — browse every Article and all 27 Amendments in a modern, searchable archive.</p>
+                <div class="hero-cta">
+                    <a href="#articles" class="btn-primary">Read Articles</a>
+                    <a href="#amendments" class="btn-outline">Browse Amendments</a>
+                </div>
+            </div>
+            <a href="#search" class="hero-scroll" aria-label="Scroll down">
+                Explore
+                <span class="hero-scroll-arrow" aria-hidden="true"></span>
+            </a>
+        </section>
+
         <!-- Search Section -->
         <section id="search" class="search-section">
             <div class="container">
+                <p class="search-section-label">Full-text search</p>
                 <div class="search-box">
                     <input 
                         type="search" 
@@ -70,15 +95,38 @@
                         </svg>
                     </button>
                 </div>
+                <p class="search-hint">Press <kbd>Ctrl</kbd> + <kbd>K</kbd> to focus search</p>
                 <div id="searchResults" class="search-results hidden" aria-live="polite"></div>
             </div>
         </section>
 
-        <!-- Constitution Content -->
-        <div class="container">
+        <!-- Constitution Content: sidebar + main -->
+        <div class="content-layout">
+
+            <!-- Table of Contents Sidebar -->
+            <aside class="toc-sidebar" aria-label="Table of contents">
+                <nav class="toc-inner">
+                    <p class="toc-heading">Contents</p>
+                    <ul class="toc-list" id="tocList">
+                        <li><a href="#preamble">Preamble</a></li>
+                        <span class="toc-group-label">Articles</span>
+                        <!-- Article links populated by JS -->
+                        <span class="toc-group-label">Amendments</span>
+                        <!-- Amendment links populated by JS -->
+                    </ul>
+                </nav>
+            </aside>
+
+            <!-- Main content -->
+            <div class="toc-main">
+
             <!-- Preamble -->
             <section id="preamble" class="constitution-section">
-                <h2>Preamble</h2>
+                <div class="section-header">
+                    <span class="section-header-line left" aria-hidden="true"></span>
+                    <h2>Preamble</h2>
+                    <span class="section-header-line" aria-hidden="true"></span>
+                </div>
                 <div class="content-card">
                     <p class="preamble-text">
                         We the People of the United States, in Order to form a more perfect Union, establish Justice, insure domestic Tranquility, provide for the common defence, promote the general Welfare, and secure the Blessings of Liberty to ourselves and our Posterity, do ordain and establish this Constitution for the United States of America.
@@ -88,7 +136,11 @@
 
             <!-- Articles -->
             <section id="articles" class="constitution-section">
-                <h2>Articles</h2>
+                <div class="section-header">
+                    <span class="section-header-line left" aria-hidden="true"></span>
+                    <h2>Articles</h2>
+                    <span class="section-header-line" aria-hidden="true"></span>
+                </div>
                 <div id="articlesContainer" class="articles-container">
                     <!-- Articles will be loaded dynamically -->
                     <div class="loading">Loading Articles...</div>
@@ -97,13 +149,19 @@
 
             <!-- Amendments -->
             <section id="amendments" class="constitution-section">
-                <h2>Amendments</h2>
+                <div class="section-header">
+                    <span class="section-header-line left" aria-hidden="true"></span>
+                    <h2>Amendments</h2>
+                    <span class="section-header-line" aria-hidden="true"></span>
+                </div>
                 <div id="amendmentsContainer" class="amendments-container">
                     <!-- Amendments will be loaded dynamically -->
                     <div class="loading">Loading Amendments...</div>
                 </div>
             </section>
-        </div>
+
+            </div><!-- /.toc-main -->
+        </div><!-- /.content-layout -->
     </main>
 
     <!-- Footer -->
@@ -141,5 +199,6 @@
     <script src="js/app.js"></script>
     <script src="js/search.js"></script>
     <script src="js/pwa.js"></script>
+    <script src="js/animations.js"></script>
 </body>
 </html>
