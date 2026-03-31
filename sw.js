@@ -1,6 +1,6 @@
 // Service Worker for US Constitution PWA
-const CACHE_NAME = 'us-constitution-v1';
-const DYNAMIC_CACHE = 'us-constitution-dynamic-v1';
+const CACHE_NAME = 'us-constitution-v2';
+const DYNAMIC_CACHE = 'us-constitution-dynamic-v2';
 
 // Resources to cache on install
 const STATIC_CACHE_URLS = [
